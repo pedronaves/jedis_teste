@@ -44,6 +44,7 @@ Tempo é fundamental para nós, porém, vamos focar na qualidade do seu trabalho
 - Rails 7.0.4
 - PostgreSQL 15
 - Docker
+- Gitflow
 
 ## Setup da Aplicação
 
@@ -96,4 +97,9 @@ Testando API
 Relatório de Cobertura de Testes (Simplecov)
 `$ `
 
+Testes do Rubocop
+`$ docker-compose run web rubocop`
+
+Correção Automática via Rubocop
+`$ docker-compose run web rubocop -A`
 ## Deploy
