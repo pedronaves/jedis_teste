@@ -1,4 +1,7 @@
 require: rubocop-rails
+
+AllCops:
+  NewCops: enable
 Style/FrozenStringLiteralComment:
   Enabled: true
 Style/Documentation:
