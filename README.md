@@ -47,8 +47,53 @@ Tempo é fundamental para nós, porém, vamos focar na qualidade do seu trabalho
 
 ## Setup da Aplicação
 
+Ao acessar a raiz da pasta, seguir os passos:
+
+`$ cd development/`
+`$ docker-compose run web bundle install`
+`$ docker-compose run web rails db:migrate`
+`$ docker-compose run web rails db:setup`
+`$ docker-compose build`
+
+Então rode o seguinte comando para instanciar a aplicação
+
+`$ docker-compose up`
+
+### Para criação de um controller
+
+`$ docker-compose run web rails g controller nome_do_controller`
+
 ## Ambientes
 
+[Desenvolvimento](https://#) - https://#
+[QA](https://#) - https://#
+[Produção](https://#) - https://#
+
 ## Testes
+
+Gems Utilizadas:
+
+- RSpec
+- Rubocop
+- Fakker
+- FactoryBot
+- Simplecov
+
+### Executando Testes
+
+Suíte completa
+`$ docker-compose run web bundle exec rspec`
+
+Testando Controller
+`$ `
+
+Testando Model
+`$ `
+
+Testando API
+`$ `
+
+Relatório de Cobertura de Testes (Simplecov)
+`$ `
 
 ## Deploy

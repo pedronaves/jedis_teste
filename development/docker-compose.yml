@@ -4,25 +4,25 @@ services:
     image: postgres
     restart: always
     environment:
-     - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
       - db:/var/lib/postgresql/data'
     logging:
-            driver: none
+      driver: none
     ports:
       - 5432:5432
   web:
     build: ../
     command: bundle exec rails s -p 3000 -e development -b '0.0.0.0'
     environment:
-     DB_USERNAME: postgres
-     DB_PASSWORD: 123
-     DB_NAME: jedisapp_db
-     DB_PORT: 5432
-     DB_HOST: db
-     RAILS_ENV: development
-     RAILS_MAX_THREADS: 5
-     BUNDLE_PATH: /bundle
+      DB_USERNAME: postgres
+      DB_PASSWORD: 123
+      DB_NAME: jedisapp_db
+      DB_PORT: 5432
+      DB_HOST: db
+      RAILS_ENV: development
+      RAILS_MAX_THREADS: 5
+      BUNDLE_PATH: /bundle
     volumes:
       - ../:/rails-app
       - bundle:/bundle
