@@ -82,24 +82,29 @@ Gems Utilizadas:
 
 ### Executando Testes
 
+Certifique-se de estar na pasta `development/`, e então execute os testes via console.
+
 Suíte completa
+`$ docker-compose run web rspec`
+ou
 `$ docker-compose run web bundle exec rspec`
 
 Testando Controller
-`$ `
+`$`
 
 Testando Model
-`$ `
+`$`
 
 Testando API
-`$ `
+`$`
 
 Relatório de Cobertura de Testes (Simplecov)
-`$ `
+`$`
 
 Testes do Rubocop
 `$ docker-compose run web rubocop`
 
 Correção Automática via Rubocop
 `$ docker-compose run web rubocop -A`
+
 ## Deploy
