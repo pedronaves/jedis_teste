@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_09_235101) do
     t.integer "phone_area", null: false
     t.integer "phone_number", null: false
     t.string "photo", null: false
-    t.boolean "status", null: false
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
