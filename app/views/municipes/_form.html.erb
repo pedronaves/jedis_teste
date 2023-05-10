@@ -1,0 +1,72 @@
+<%= form_with(model: municipe) do |form| %>
+  <% if municipe.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(municipe.errors.count, "error") %> erros impediram a conclusão do cadastro:</h2>
+
+      <ul>
+        <% municipe.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, 'Nome Completo', style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :cpf, 'CPF', style: "display: block" %>
+    <%= form.number_field :cpf %>
+  </div>
+
+  <div>
+    <%= form.label :cns, 'Número CNS', style: "display: block" %>
+    <%= form.number_field :cns %>
+  </div>
+
+  <div>
+    <%= form.label :email, 'E-mail', style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :birthday, 'Data de Nascimento', style: "display: block" %>
+    <%= form.number_field :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :phone_country, 'Código País', style: "display: block" %>
+    <%= form.number_field :phone_country %>
+  </div>
+
+  <div>
+    <%= form.label :phone_area, 'DDD', style: "display: block" %>
+    <%= form.number_field :phone_area %>
+  </div>
+
+  <div>
+    <%= form.label :phone_number, 'Número de Telefone', style: "display: block" %>
+    <%= form.number_field :phone_number %>
+  </div>
+
+  <div>
+    <%= form.label :photo, 'Foto', style: "display: block" %>
+    <%= form.text_field :photo %>
+  </div>
+
+  <div>
+    <%= form.label :status, 'Status' %>
+    <br/>
+    <%= form.label :status, "Ativo", value: "true" %>
+    <%= form.radio_button :status, true, checked: true %>
+    <br/>
+    <%= form.label :status, "Inativo", value: "false" %>
+    <%= form.radio_button :status, false %>
+  </div>
+
+  <div>
+    <%= form.submit 'Salvar', :class => 'btn btn-primary' %>
+  </div>
+<% end %>
