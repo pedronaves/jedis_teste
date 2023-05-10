@@ -1,14 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
+<%= link_to new_municipe_path, :class => 'btn btn-primary btn-sm float-end' do %>
+  Criar Novo
+<% end %>
 <h1>Municipes</h1>
 
 <div id="municipes">
-  <% @municipes.each do |municipe| %>
-    <%= render municipe %>
-    <p>
-      <%= link_to "Ver", municipe %>
-    </p>
-  <% end %>
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>CNS</th>
+        <th>E-mail</th>
+        <th>Data de Nascimento</th>
+        <th>Código País</th>
+        <th>DDD</th>
+        <th>Telefone</th>
+        <th>Status</th>
+        <th>Foto</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @municipes.each do |municipe| %>
+        <tr>
+          <td><%= municipe.name %></td>
+          <td><%= municipe.cpf %></td>
+          <td><%= municipe.cns %></td>
+          <td><%= municipe.email %></td>
+          <td><%= municipe.birthday %></td>
+          <td><%= municipe.phone_country %></td>
+          <td><%= municipe.phone_area %></td>
+          <td><%= municipe.phone_number %></td>
+          <td><%= municipe.status %></td>
+          <td><%= municipe.photo %></td>
+          <td><%= link_to "Ver", municipe, :class => 'btn btn-outline-primary btn-sm float-end' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
-<%= link_to "Criar Novo", new_municipe_path %>
