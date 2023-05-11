@@ -1,0 +1,52 @@
+<%= form_with(model: [@municipe, address], local: true) do |form| %>
+  <% if address.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(address.errors.count, "error") %> prohibited this address from being saved:</h2>
+
+      <ul>
+        <% address.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :postal_code, 'CEP', style: "display: block" %>
+    <%= form.text_field :postal_code %>
+  </div>
+
+  <div>
+    <%= form.label :address, 'Endereço', style: "display: block" %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div>
+    <%= form.label :address_complement, 'Complemento', style: "display: block" %>
+    <%= form.text_field :address_complement %>
+  </div>
+
+  <div>
+    <%= form.label :neighborhood, 'Bairro', style: "display: block" %>
+    <%= form.text_field :neighborhood %>
+  </div>
+
+  <div>
+    <%= form.label :city, 'Cidade', style: "display: block" %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div>
+    <%= form.label :state, 'Estado', style: "display: block" %>
+    <%= form.text_field :state %>
+  </div>
+
+  <div>
+    <%= form.label :ibge_code, 'Código IBGE', style: "display: block" %>
+    <%= form.text_field :ibge_code %>
+  </div>
+
+  <div>
+    <%= form.submit 'Salvar', :class => 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -1,9 +1,13 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :municipes
+
+  resources :municipes do
+    resources :addresses
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root 'dashboard#index'
+  root 'municipes#index'
 end

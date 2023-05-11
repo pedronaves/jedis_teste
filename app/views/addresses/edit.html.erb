@@ -1,0 +1,10 @@
+<h1>Editar Endereço</h1>
+
+<%= render "form", address: @address %>
+
+<br>
+
+<div>
+  <%= link_to "Ver Detalhes", municipe_address_path(@municipe, @address) %> |
+  <%= link_to "Voltar para Endereços", municipe_addresses_path(@municipe) %>
+</div>

@@ -5,7 +5,7 @@
 <% end %>
 <h1>Municipes</h1>
 
-<div id="municipes">
+<div id="municipes" class="mt-5">
   <table class="table table-hover">
     <thead class="table-dark">
       <tr>
@@ -25,7 +25,7 @@
     <tbody>
       <% @municipes.each do |municipe| %>
         <tr>
-          <td><%= municipe.name %></td>
+          <td><%= link_to municipe.name, municipe, :class => 'btn btn-link btn-sm' %></td>
           <td><%= municipe.cpf %></td>
           <td><%= municipe.cns %></td>
           <td><%= municipe.email %></td>
@@ -35,7 +35,8 @@
           <td><%= municipe.phone_number %></td>
           <td><%= municipe.status %></td>
           <td><%= municipe.photo %></td>
-          <td><%= link_to "Ver", municipe, :class => 'btn btn-outline-primary btn-sm float-end' %></td>
+          <td>
+          <%= link_to municipe_addresses_path(municipe), :class => 'btn btn-outline-primary btn-sm float-end' do %>Endereço (<%= municipe.address.count %>)<% end %></td>
         </tr>
       <% end %>
     </tbody>

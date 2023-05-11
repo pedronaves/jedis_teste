@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @address %>
+
+<div>
+  <%= link_to "Editar Endereço", edit_municipe_address_path(@municipe, @address) %> |
+  <%= link_to "Voltar", municipe_addresses_path(@municipe) %>
+
+
+</div>

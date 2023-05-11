@@ -1,0 +1,41 @@
+<h1>Municipe: <%= @municipe.name %></h1>
+
+<h3>Detalhes do Endereço</h3>
+
+<div id="<%= dom_id address %>">
+  <p>
+    <strong>CEP:</strong>
+    <%= address.postal_code %>
+  </p>
+
+  <p>
+    <strong>Endereço:</strong>
+    <%= address.address %>
+  </p>
+
+  <p>
+    <strong>Complemento:</strong>
+    <%= address.address_complement %>
+  </p>
+
+  <p>
+    <strong>Bairro:</strong>
+    <%= address.neighborhood %>
+  </p>
+
+  <p>
+    <strong>Cidade:</strong>
+    <%= address.city %>
+  </p>
+
+  <p>
+    <strong>Estado:</strong>
+    <%= address.state %>
+  </p>
+
+  <p>
+    <strong>Código IBGE:</strong>
+    <%= address.ibge_code %>
+  </p>
+
+</div>

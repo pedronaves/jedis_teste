@@ -1,6 +1,17 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
+  factory :address do
+    postal_code { "MyString" }
+    address { "MyString" }
+    address_complement { "MyString" }
+    neighborhood { "MyString" }
+    city { "MyString" }
+    state { "MyString" }
+    ibge_code { "MyString" }
+    municipe { nil }
+  end
+
   factory :municipe do
     name { "MyString" }
     cpf { 1 }
