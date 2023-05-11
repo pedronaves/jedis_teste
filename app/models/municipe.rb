@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Municipe < ApplicationRecord
   validates :name, presence: true
   validates :cpf, presence: true

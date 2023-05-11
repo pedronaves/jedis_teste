@@ -1,20 +1,22 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "addresses/show", type: :view do
+RSpec.describe 'addresses/show', type: :view do
   before(:each) do
     assign(:address, Address.create!(
-      postal_code: "Postal Code",
-      address: "Address",
-      address_complement: "Address Complement",
-      neighborhood: "Neighborhood",
-      city: "City",
-      state: "State",
-      ibge_code: "Ibge Code",
-      municipe: nil
-    ))
+                       postal_code: 'Postal Code',
+                       address: 'Address',
+                       address_complement: 'Address Complement',
+                       neighborhood: 'Neighborhood',
+                       city: 'City',
+                       state: 'State',
+                       ibge_code: 'Ibge Code',
+                       municipe: nil
+                     ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Postal Code/)
     expect(rendered).to match(/Address/)
