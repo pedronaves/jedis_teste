@@ -10,23 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_09_235101) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_10_021534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.string "postal_code"
+    t.string "address"
+    t.string "address_complement"
+    t.string "neighborhood"
+    t.string "city"
+    t.string "state"
+    t.string "ibge_code"
+    t.bigint "municipe_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["municipe_id"], name: "index_addresses_on_municipe_id"
+  end
+
   create_table "municipes", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "cpf", null: false
-    t.integer "cns", null: false
+    t.string "cpf", null: false
+    t.string "cns", null: false
     t.string "email", null: false
-    t.integer "birthday", null: false
-    t.integer "phone_country", null: false
-    t.integer "phone_area", null: false
-    t.integer "phone_number", null: false
+    t.datetime "birthday", null: false
+    t.string "phone_country", null: false
+    t.string "phone_area", null: false
+    t.string "phone_number", null: false
     t.string "photo", null: false
     t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "addresses", "municipes"
 end

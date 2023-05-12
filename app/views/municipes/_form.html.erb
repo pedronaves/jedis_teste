@@ -13,42 +13,42 @@
 
   <div>
     <%= form.label :name, 'Nome Completo', style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :cpf, 'CPF', style: "display: block" %>
-    <%= form.number_field :cpf %>
+    <%= form.text_field :cpf, class: "form-control", minlength:8, maxlength:20, onkeypress:"$(this).mask('000.000.000-AA')" %>
   </div>
 
   <div>
     <%= form.label :cns, 'Número CNS', style: "display: block" %>
-    <%= form.number_field :cns %>
+    <%= form.text_field :cns, class: "form-control", onkeypress:"$(this).mask('000 0000 0000 0000')" %>
   </div>
 
   <div>
     <%= form.label :email, 'E-mail', style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email , class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :birthday, 'Data de Nascimento', style: "display: block" %>
-    <%= form.number_field :birthday %>
+    <%= form.date_field :birthday, class: "form-control", min: "1950-01-01", max: Time.now %>
   </div>
 
   <div>
     <%= form.label :phone_country, 'Código País', style: "display: block" %>
-    <%= form.number_field :phone_country %>
+    <%= form.text_field :phone_country,  class: "form-control", minlength:2, maxlength:4, onkeypress:"$(this).mask('+00')" %>
   </div>
 
   <div>
     <%= form.label :phone_area, 'DDD', style: "display: block" %>
-    <%= form.number_field :phone_area %>
+    <%= form.text_field :phone_area, class: "form-control", minlength:2, maxlength:4, onkeypress:"$(this).mask('(00)')" %>
   </div>
 
   <div>
     <%= form.label :phone_number, 'Número de Telefone', style: "display: block" %>
-    <%= form.number_field :phone_number %>
+    <%= form.text_field :phone_number, class: "form-control", minlength:6, maxlength:13, onkeypress:"$(this).mask('00000 0000')" %>
   </div>
 
   <div>

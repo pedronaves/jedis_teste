@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Municipe < ApplicationRecord
   validates :name, presence: true
   validates :cpf, presence: true
@@ -8,4 +10,6 @@ class Municipe < ApplicationRecord
   validates :phone_area, presence: true
   validates :phone_number, presence: true
   validates :photo, presence: true
+
+  has_many :address, dependent: :destroy
 end

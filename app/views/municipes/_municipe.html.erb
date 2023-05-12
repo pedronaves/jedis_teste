@@ -21,17 +21,17 @@
 
   <p>
     <strong>Data de Nascimento:</strong>
-    <%= municipe.birthday %>
+    <%= municipe.birthday.strftime("%m/%d/%Y") %>
   </p>
 
   <p>
     <strong>Código País:</strong>
-    <%= municipe.phone_country %>
+    +<%= municipe.phone_country %>
   </p>
 
   <p>
     <strong>DDD:</strong>
-    <%= municipe.phone_area %>
+    (<%= municipe.phone_area %>)
   </p>
 
   <p>
@@ -46,7 +46,7 @@
 
   <p>
     <strong>Status:</strong>
-    <%= municipe.status %>
+    <%= get_status(municipe.status) %>
   </p>
 
 </div>

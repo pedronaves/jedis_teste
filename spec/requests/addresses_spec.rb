@@ -14,9 +14,9 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe '/municipes', type: :request do
+RSpec.describe '/addresses', type: :request do
   # This should return the minimal set of attributes required to create a valid
-  # Municipe. As you add validations to Municipe, be sure to
+  # Address. As you add validations to Address, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
     skip('Add a hash of attributes valid for your model')
@@ -28,58 +28,58 @@ RSpec.describe '/municipes', type: :request do
 
   describe 'GET /index' do
     it 'renders a successful response' do
-      Municipe.create! valid_attributes
-      get municipes_url
+      Address.create! valid_attributes
+      get addresses_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /show' do
     it 'renders a successful response' do
-      municipe = Municipe.create! valid_attributes
-      get municipe_url(municipe)
+      address = Address.create! valid_attributes
+      get address_url(address)
       expect(response).to be_successful
     end
   end
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get new_municipe_url
+      get new_address_url
       expect(response).to be_successful
     end
   end
 
   describe 'GET /edit' do
     it 'renders a successful response' do
-      municipe = Municipe.create! valid_attributes
-      get edit_municipe_url(municipe)
+      address = Address.create! valid_attributes
+      get edit_address_url(address)
       expect(response).to be_successful
     end
   end
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'creates a new Municipe' do
+      it 'creates a new Address' do
         expect do
-          post municipes_url, params: { municipe: valid_attributes }
-        end.to change(Municipe, :count).by(1)
+          post addresses_url, params: { address: valid_attributes }
+        end.to change(Address, :count).by(1)
       end
 
-      it 'redirects to the created municipe' do
-        post municipes_url, params: { municipe: valid_attributes }
-        expect(response).to redirect_to(municipe_url(Municipe.last))
+      it 'redirects to the created address' do
+        post addresses_url, params: { address: valid_attributes }
+        expect(response).to redirect_to(address_url(Address.last))
       end
     end
 
     context 'with invalid parameters' do
-      it 'does not create a new Municipe' do
+      it 'does not create a new Address' do
         expect do
-          post municipes_url, params: { municipe: invalid_attributes }
-        end.to change(Municipe, :count).by(0)
+          post addresses_url, params: { address: invalid_attributes }
+        end.to change(Address, :count).by(0)
       end
 
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
-        post municipes_url, params: { municipe: invalid_attributes }
+        post addresses_url, params: { address: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
@@ -91,42 +91,42 @@ RSpec.describe '/municipes', type: :request do
         skip('Add a hash of attributes valid for your model')
       end
 
-      it 'updates the requested municipe' do
-        municipe = Municipe.create! valid_attributes
-        patch municipe_url(municipe), params: { municipe: new_attributes }
-        municipe.reload
+      it 'updates the requested address' do
+        address = Address.create! valid_attributes
+        patch address_url(address), params: { address: new_attributes }
+        address.reload
         skip('Add assertions for updated state')
       end
 
-      it 'redirects to the municipe' do
-        municipe = Municipe.create! valid_attributes
-        patch municipe_url(municipe), params: { municipe: new_attributes }
-        municipe.reload
-        expect(response).to redirect_to(municipe_url(municipe))
+      it 'redirects to the address' do
+        address = Address.create! valid_attributes
+        patch address_url(address), params: { address: new_attributes }
+        address.reload
+        expect(response).to redirect_to(address_url(address))
       end
     end
 
     context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
-        municipe = Municipe.create! valid_attributes
-        patch municipe_url(municipe), params: { municipe: invalid_attributes }
+        address = Address.create! valid_attributes
+        patch address_url(address), params: { address: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
 
   describe 'DELETE /destroy' do
-    it 'destroys the requested municipe' do
-      municipe = Municipe.create! valid_attributes
+    it 'destroys the requested address' do
+      address = Address.create! valid_attributes
       expect do
-        delete municipe_url(municipe)
-      end.to change(Municipe, :count).by(-1)
+        delete address_url(address)
+      end.to change(Address, :count).by(-1)
     end
 
-    it 'redirects to the municipes list' do
-      municipe = Municipe.create! valid_attributes
-      delete municipe_url(municipe)
-      expect(response).to redirect_to(municipes_url)
+    it 'redirects to the addresses list' do
+      address = Address.create! valid_attributes
+      delete address_url(address)
+      expect(response).to redirect_to(addresses_url)
     end
   end
 end

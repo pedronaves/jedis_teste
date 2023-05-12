@@ -1,0 +1,44 @@
+<p style="color: green"><%= notice %></p>
+
+<%= link_to new_municipe_address_path, :class => 'btn btn-primary btn-sm float-end' do %>
+  Adicionar Novo Endereço
+<% end %>
+
+<h1>Endereços de Municipe:</h1>
+<h2><%= link_to municipe_path(@municipe), :class => 'btn-link' do %><%= @municipe.name%><% end %></h2>
+
+<div id="addresses" class="mt-5">
+  <table class="table table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>CEP</th>
+        <th>Endereço</th>
+        <th>Complemento</th>
+        <th>Bairro</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Código IBGE</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @addresses.each do |address| %>
+        <tr>
+          <td><%= address.postal_code %></td>
+          <td><%= address.address %></td>
+          <td><%= address.address_complement %></td>
+          <td><%= address.neighborhood %></td>
+          <td><%= address.city %></td>
+          <td><%= address.state %></td>
+          <td><%= address.ibge_code %></td>
+          <td>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+              <%= button_to "Excluir", [@municipe, address], method: :delete, :class => 'btn btn-outline-danger btn-sm me-md-2' %>
+              <%= link_to "Ver", municipe_address_path(@municipe, address), :class => 'btn btn-outline-primary btn-sm' %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
