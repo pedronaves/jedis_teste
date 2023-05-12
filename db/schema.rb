@@ -30,13 +30,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_021534) do
 
   create_table "municipes", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "cpf", null: false
-    t.integer "cns", null: false
+    t.string "cpf", null: false
+    t.string "cns", null: false
     t.string "email", null: false
-    t.integer "birthday", null: false
-    t.integer "phone_country", null: false
-    t.integer "phone_area", null: false
-    t.integer "phone_number", null: false
+    t.datetime "birthday", null: false
+    t.string "phone_country", null: false
+    t.string "phone_area", null: false
+    t.string "phone_number", null: false
     t.string "photo", null: false
     t.boolean "status", default: false
     t.datetime "created_at", null: false

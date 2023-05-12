@@ -13,37 +13,37 @@
 
   <div>
     <%= form.label :postal_code, 'CEP', style: "display: block" %>
-    <%= form.text_field :postal_code %>
+    <%= form.text_field :postal_code, class: "form-control", onkeypress:"$(this).mask('00000-000')" %>
   </div>
 
   <div>
     <%= form.label :address, 'Endereço', style: "display: block" %>
-    <%= form.text_field :address %>
+    <%= form.text_field :address, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :address_complement, 'Complemento', style: "display: block" %>
-    <%= form.text_field :address_complement %>
+    <%= form.text_field :address_complement, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :neighborhood, 'Bairro', style: "display: block" %>
-    <%= form.text_field :neighborhood %>
+    <%= form.text_field :neighborhood, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :city, 'Cidade', style: "display: block" %>
-    <%= form.text_field :city %>
+    <%= form.text_field :city, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :state, 'Estado', style: "display: block" %>
-    <%= form.text_field :state %>
+    <%= form.text_field :state, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :ibge_code, 'Código IBGE', style: "display: block" %>
-    <%= form.text_field :ibge_code %>
+    <%= form.text_field :ibge_code, class: "form-control" %>
   </div>
 
   <div>

@@ -29,11 +29,11 @@
           <td><%= municipe.cpf %></td>
           <td><%= municipe.cns %></td>
           <td><%= municipe.email %></td>
-          <td><%= municipe.birthday %></td>
-          <td><%= municipe.phone_country %></td>
-          <td><%= municipe.phone_area %></td>
+          <td><%= municipe.birthday.strftime("%m/%d/%Y") %></td>
+          <td>+<%= municipe.phone_country %></td>
+          <td>(<%= municipe.phone_area %>)</td>
           <td><%= municipe.phone_number %></td>
-          <td><%= municipe.status %></td>
+          <td><%= get_status(municipe.status) %></td>
           <td><%= municipe.photo %></td>
           <td>
           <%= link_to municipe_addresses_path(municipe), :class => 'btn btn-outline-primary btn-sm float-end' do %>Endereço (<%= municipe.address.count %>)<% end %></td>

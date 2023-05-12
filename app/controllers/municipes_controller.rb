@@ -16,6 +16,7 @@ class MunicipesController < ApplicationController
   def edit; end
 
   def create
+    params[:municipe][:phone_number].gsub(/\D/, "").to_i
     @municipe = Municipe.new(municipe_params)
 
     respond_to do |format|
@@ -31,6 +32,7 @@ class MunicipesController < ApplicationController
 
   def update
     respond_to do |format|
+
       if @municipe.update(municipe_params)
         format.html { redirect_to municipe_url(@municipe), notice: 'Cadastro atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @municipe }
@@ -48,6 +50,11 @@ class MunicipesController < ApplicationController
   end
 
   def municipe_params
+    params[:municipe][:phone_number].gsub!(/\D/, "").to_i
+    params[:municipe][:cpf].gsub!(/\D/, "").to_i
+    params[:municipe][:phone_area].gsub!(/\D/, "").to_i
+    # params[:municipe][:birthday].gsub!(/\D/, "").to_i
+    params[:municipe][:phone_country].gsub!(/\D/, "").to_i
     params.require(:municipe).permit(:name, :cpf, :cns, :email, :birthday, :phone_country, :phone_area,
                                      :phone_number, :photo, :status)
   end
