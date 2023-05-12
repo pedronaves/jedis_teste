@@ -16,11 +16,13 @@ class MunicipesController < ApplicationController
   def edit; end
 
   def create
-    params[:municipe][:phone_number].gsub(/\D/, "").to_i
+
     @municipe = Municipe.new(municipe_params)
 
     respond_to do |format|
       if @municipe.save
+        to_email = params[:municipe][:email]
+        UserMailer.new_municipe(to_email).deliver_now
         format.html { redirect_to municipe_url(@municipe), notice: 'Cadastro realizado com sucesso.' }
         format.json { render :show, status: :created, location: @municipe }
       else
@@ -32,8 +34,9 @@ class MunicipesController < ApplicationController
 
   def update
     respond_to do |format|
-
       if @municipe.update(municipe_params)
+        to_email = params[:municipe][:email]
+        UserMailer.update_municipe(to_email).deliver_now
         format.html { redirect_to municipe_url(@municipe), notice: 'Cadastro atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @municipe }
       else
@@ -50,7 +53,6 @@ class MunicipesController < ApplicationController
   end
 
   def municipe_params
-
     params[:municipe][:cpf].gsub!(/\D/, "").to_i
     params[:municipe][:cns].gsub!(/\D/, "").to_i
     params[:municipe][:phone_country].gsub!(/\D/, "").to_i

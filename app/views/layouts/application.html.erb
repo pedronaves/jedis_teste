@@ -15,11 +15,12 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <div class="mt-5 container themed-container">
-      <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+    <div class="container-fluid px-5">
+      <%= render 'shared/navbar' %>
+      <div class="h-100 p-3 bg-body-tertiary border rounded-3">
         <%= yield %>
       </div>
+      <%= render 'shared/footer' %>
     </div>
   </body>
 </html>

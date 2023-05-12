@@ -51,14 +51,32 @@ Tempo é fundamental para nós, porém, vamos focar na qualidade do seu trabalho
 Ao acessar a raiz da pasta, seguir os passos:
 
 `$ cd development/`
+
 `$ docker-compose run web bundle install`
+
 `$ docker-compose run web rails db:migrate`
+
 `$ docker-compose run web rails db:setup`
+
 `$ docker-compose build`
 
 Então rode o seguinte comando para instanciar a aplicação
 
 `$ docker-compose up`
+
+### Notificações
+
+#### E-mail
+
+Ao criar ou alterar um Municipe, uma notificação via e-mail é enviada.
+
+Acesse o link abaixo para visualizar e-mails enviados.
+
+[http://localhost:3000/letter_opener](http://localhost:3000/letter_opener)
+
+#### SMS
+
+Ao criar ou alterar um Municipe, uma notificação via SMS é enviada.
 
 ### Para criação de um controller
 
