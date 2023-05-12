@@ -5,3 +5,4 @@ import "controllers"
 //= require popper
 //= require bootstrap
 import "custom/inputmask"
+import "custom/autocomplete_address"
