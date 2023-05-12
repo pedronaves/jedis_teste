@@ -53,7 +53,6 @@ class MunicipesController < ApplicationController
     params[:municipe][:phone_number].gsub!(/\D/, "").to_i
     params[:municipe][:cpf].gsub!(/\D/, "").to_i
     params[:municipe][:phone_area].gsub!(/\D/, "").to_i
-    # params[:municipe][:birthday].gsub!(/\D/, "").to_i
     params[:municipe][:phone_country].gsub!(/\D/, "").to_i
     params.require(:municipe).permit(:name, :cpf, :cns, :email, :birthday, :phone_country, :phone_area,
                                      :phone_number, :photo, :status)
