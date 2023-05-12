@@ -23,7 +23,7 @@
 
   <div>
     <%= form.label :cns, 'Número CNS', style: "display: block" %>
-    <%= form.text_field :cns, class: "form-control" %>
+    <%= form.text_field :cns, class: "form-control", onkeypress:"$(this).mask('000 0000 0000 0000')" %>
   </div>
 
   <div>
@@ -33,7 +33,7 @@
 
   <div>
     <%= form.label :birthday, 'Data de Nascimento', style: "display: block" %>
-    <%= form.date_field :birthday, class: "form-control", min: "1950-01-01" %>
+    <%= form.date_field :birthday, class: "form-control", min: "1950-01-01", max: Time.now %>
   </div>
 
   <div>
