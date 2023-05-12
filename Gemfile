@@ -53,6 +53,9 @@ gem "bootsnap", require: false
 gem 'bootstrap', '~> 5.3.0.alpha3'
 gem 'jquery-rails'
 gem 'simple_form'
+gem 'shrine', '~> 3.3'
+gem 'image_processing'
+gem "mini_magick"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

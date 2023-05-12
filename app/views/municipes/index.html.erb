@@ -34,7 +34,7 @@
           <td>(<%= municipe.phone_area %>)</td>
           <td><%= municipe.phone_number %></td>
           <td><%= get_status(municipe.status) %></td>
-          <td><%= municipe.photo %></td>
+          <td><%= image_tag municipe.image_url(:thumb), :class => "image" if municipe.image %></td>
           <td><%= link_to municipe_addresses_path(municipe), :class => 'btn btn-outline-primary btn-sm float-end' do %>Endereço (<%= municipe.address.count %>)<% end %></td>
         </tr>
       <% end %>

@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_10_021534) do
     t.string "phone_country", null: false
     t.string "phone_area", null: false
     t.string "phone_number", null: false
-    t.string "photo", null: false
+    t.text "image_data", null: false
     t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -52,8 +52,10 @@
   </div>
 
   <div>
-    <%= form.label :photo, 'Foto', style: "display: block" %>
-    <%= form.text_field :photo %>
+    <%= form.label :image, 'Foto' %>
+    <%= image_tag form.object.image_url if form.object.cached_image_data %>
+    <%= form.hidden_field :image, value: form.object.cached_image_data %>
+    <%= form.file_field :image %>
   </div>
 
   <div>

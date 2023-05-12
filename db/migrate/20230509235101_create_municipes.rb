@@ -11,7 +11,7 @@ class CreateMunicipes < ActiveRecord::Migration[7.0]
       t.string :phone_country, null: false
       t.string :phone_area, null: false
       t.string :phone_number, null: false
-      t.string :photo, null: false
+      t.text :image_data, null: false
       t.boolean :status, default: false
 
       t.timestamps
