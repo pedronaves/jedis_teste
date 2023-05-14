@@ -1,0 +1,5 @@
+<p style="color: green"><%= notice %></p>
+<%= render "remote_modal_address", title: "Endereço" do %>
+  <%= render @address %>
+  <%= link_to "Editar Endereço", edit_municipe_address_path(@municipe, @address) %>
+<% end %>

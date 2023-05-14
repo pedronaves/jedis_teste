@@ -21,11 +21,12 @@ class AddressesController < ApplicationController
 
     respond_to do |format|
       if @address.save
-        format.html { redirect_to municipe_addresses_path(@municipe), notice: 'Endereço criado com sucesso.' }
+        format.html { redirect_to municipes_url, notice: 'Endereço criado com sucesso.' }
         format.json { render :show, status: :created, location: @address }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @address.errors, status: :unprocessable_entity }
+        format.turbo_stream { render :form_update, status: :unprocessable_entity }
       end
     end
   end
@@ -33,7 +34,7 @@ class AddressesController < ApplicationController
   def update
     respond_to do |format|
       if @address.update(address_params)
-        format.html { redirect_to municipe_addresses_path(@municipe), notice: 'Endereço editado com sucesso.' }
+        format.html { redirect_to municipes_url, notice: 'Endereço editado com sucesso.' }
         format.json { render :show, status: :ok, location: @address }
       else
         format.html { render :edit, status: :unprocessable_entity }

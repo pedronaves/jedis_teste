@@ -1,6 +1,8 @@
 <h1>Novo Endereço</h1>
 
-<%= render "form", address: @address %>
+<%= render "remote_modal", title: "Novo Endereço" do %>
+  <%= render "form", address: @address %>
+<% end %>
 
 <br>
 

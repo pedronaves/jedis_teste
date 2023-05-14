@@ -4,10 +4,15 @@ class MunicipesController < ApplicationController
   before_action :set_municipe, only: %i[show edit update]
 
   def index
-    @municipes = Municipe.all
+    @municipes = Municipe.all.order('created_at DESC')
   end
 
   def show; end
+
+  def show_address
+    @municipe = Municipe.find_by_id(params[:municipe_id])
+    @address = Address.find_by_municipe_id(@municipe)
+  end
 
   def new
     @municipe = Municipe.new
@@ -23,11 +28,12 @@ class MunicipesController < ApplicationController
       if @municipe.save
         to_email = params[:municipe][:email]
         UserMailer.new_municipe(to_email).deliver_now
-        format.html { redirect_to municipe_url(@municipe), notice: 'Cadastro realizado com sucesso.' }
+        format.html { redirect_to municipes_url, notice: 'Cadastro realizado com sucesso.' }
         format.json { render :show, status: :created, location: @municipe }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @municipe.errors, status: :unprocessable_entity }
+        format.turbo_stream { render :form_update, status: :unprocessable_entity }
       end
     end
   end

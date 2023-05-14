@@ -1,12 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
-<%= link_to new_municipe_path, :class => 'btn btn-primary btn-sm float-end' do %>
+<%= link_to new_municipe_path, :class => 'btn btn-primary btn-sm float-end', data: { turbo_frame: "remote_modal" }  do %>
   Criar Novo
 <% end %>
 <h1>Municipes</h1>
 
 <div id="municipes" class="mt-5 table-responsive">
-  <table class="table table-hover">
+  <table id="datatable" class="table table-hover">
     <thead class="table-dark">
       <tr>
         <th>Nome</th>
@@ -35,7 +35,17 @@
           <td><%= municipe.phone_number %></td>
           <td><%= get_status(municipe.status) %></td>
           <td><%= image_tag municipe.image_url(:thumb), :class => "image" if municipe.image %></td>
-          <td><%= link_to municipe_addresses_path(municipe), :class => 'btn btn-outline-primary btn-sm float-end' do %>Endereço (<%= municipe.address.count %>)<% end %></td>
+          <td>
+          <% if !municipe.address.ids.empty? %>
+            <%= link_to municipe_show_address_path(municipe), :class => 'btn btn-primary btn-sm float-end', data: { turbo_frame: "remote_modal_address" }  do %>
+              Endereço
+            <% end %>
+          <% else %>
+            <%= link_to new_municipe_address_path(municipe), :class => 'btn btn-primary btn-sm float-end', data: { turbo_frame: "remote_modal" }  do %>
+              Adicionar Novo Endereço
+            <% end %>
+          <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>

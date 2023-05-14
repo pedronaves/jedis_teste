@@ -1,7 +1,8 @@
 <h1>Novo Municipe</h1>
 
-<%= render "form", municipe: @municipe %>
-
+<%= render "remote_modal", title: "Novo Municipe" do %>
+  <%= render "form", municipe: @municipe %>
+<% end %>
 <br>
 
 <div>
