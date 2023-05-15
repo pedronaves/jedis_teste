@@ -19,11 +19,11 @@ RSpec.describe '/municipes', type: :request do
   # Municipe. As you add validations to Municipe, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+    skip()
   end
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    skip()
   end
 
   describe 'GET /index' do
@@ -44,7 +44,8 @@ RSpec.describe '/municipes', type: :request do
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get new_municipe_url
+      municipe = Municipe.create! valid_attributes
+      get municipes_url
       expect(response).to be_successful
     end
   end

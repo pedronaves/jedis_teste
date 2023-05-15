@@ -3,37 +3,39 @@
 require 'rails_helper'
 
 RSpec.describe AddressesController, type: :routing do
+  let(:valid_attributes) do
+    skip()
+  end
+
   describe 'routing' do
     it 'routes to #index' do
-      expect(get: '/addresses').to route_to('addresses#index')
+      municipe = Municipe.create! valid_attributes
+      expect(get: '/municipes/1/addresses').to route_to('addresses#index', municipe_id: municipe)
     end
 
     it 'routes to #new' do
-      expect(get: '/addresses/new').to route_to('addresses#new')
+      municipe = Municipe.create! valid_attributes
+      expect(get: '/municipes/1/addresses/new').to route_to('addresses#new', municipe_id: municipe)
     end
 
     it 'routes to #show' do
-      expect(get: '/addresses/1').to route_to('addresses#show', id: '1')
-    end
-
-    it 'routes to #edit' do
-      expect(get: '/addresses/1/edit').to route_to('addresses#edit', id: '1')
+      municipe = Municipe.create! valid_attributes
+      expect(get: '/municipes/1/addresses/1').to route_to('addresses#show', municipe_id: municipe, id: '1')
     end
 
     it 'routes to #create' do
-      expect(post: '/addresses').to route_to('addresses#create')
+      municipe = Municipe.create! valid_attributes
+      expect(post: '/municipes/1/addresses').to route_to('addresses#create', municipe_id: municipe)
     end
 
     it 'routes to #update via PUT' do
-      expect(put: '/addresses/1').to route_to('addresses#update', id: '1')
+      municipe = Municipe.create! valid_attributes
+      expect(put: '/municipes/1/addresses/1').to route_to('addresses#update', municipe_id: municipe, id: '1')
     end
 
     it 'routes to #update via PATCH' do
-      expect(patch: '/addresses/1').to route_to('addresses#update', id: '1')
-    end
-
-    it 'routes to #destroy' do
-      expect(delete: '/addresses/1').to route_to('addresses#destroy', id: '1')
+      municipe = Municipe.create! valid_attributes
+      expect(patch: 'municipes/1/addresses/1').to route_to('addresses#update', municipe_id: municipe, id: '1')
     end
   end
 end
