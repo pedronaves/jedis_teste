@@ -3,8 +3,8 @@ default: &default
   encoding: unicode
   username: <%= ENV['DB_USERNAME'] %>
   password: <%= ENV['DB_PASSWORD'] %>
-  port: <%= ENV['DB_PORT'] %>
-  host: <%= ENV['DB_HOST'] %>
+  host: <%= ENV.fetch('DATABASE_HOST', 'db') %>
+  port: <%= ENV.fetch('DATABASE_PORT', 5432) %>
   database: <%= ENV['DB_NAME'] %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 

@@ -18,7 +18,7 @@ COPY . /rails-app
 
 RUN rails assets:precompile
 
-EXPOSE 5432
+EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
 
