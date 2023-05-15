@@ -18,8 +18,7 @@ COPY . /rails-app
 
 RUN rails assets:precompile
 
-EXPOSE 3000/tcp
-EXPOSE 5432/tcp
+EXPOSE 3000 80 443 5432
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
 
