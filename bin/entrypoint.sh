@@ -1,7 +1,8 @@
-#!/bin/bash
-set -e
+#!/bin/bash -e
 
-# Remove a potentially pre-existing server.pid for Rails.
-rm -f /rails-app/tmp/pids/server.pid
+# If running the rails server then create or migrate existing database
+if [ "${*}" == "./bin/rails server" ]; then
+  ./bin/rails db:prepare
+fi
 
-exec "$@"
+exec "${@}"
