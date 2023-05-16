@@ -80,11 +80,11 @@ Ao criar ou alterar um Municipe, uma notificação via SMS é enviada.
 
 ## Ambientes
 
-[Desenvolvimento]([https://#](https://jedisteste-oi.b4a.run/)) - [https://#](https://jedisteste-oi.b4a.run/)
+[Desenvolvimento]([https://#](https://#)) - [https://#](https://#)
 
-[QA]([https://#](https://jedisteste-oi.b4a.run/)) - [https://#](https://jedisteste-oi.b4a.run/)
+[QA]([https://#](https://#)) - [https://#](https://#)
 
-[Produção]([https://#](https://jedisteste-oi.b4a.run/)) - [https://#](https://jedisteste-oi.b4a.run/)
+[Produção]([https://#](https://#)) - [https://#](https://#)
 
 obs: em um cenário ideal, cada ambiente seria diferente, por motivos de ser apenas um teste, a aplicação está em um ambiente de desenvolvimento.
 

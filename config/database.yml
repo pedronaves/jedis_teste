@@ -1,18 +1,23 @@
-default: &default
+development:
   adapter: postgresql
   encoding: unicode
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV.fetch('DATABASE_HOST', 'db') %>
-  port: <%= ENV.fetch('DATABASE_PORT', 5432) %>
-  database: <%= ENV['DB_NAME'] %>
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-
-development:
-  <<: *default
+  database: jedisapp_development
+  pool: 5
+  username: pedronaves
+  password:
 
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: jedisapp_test
+  pool: 5
+  username: pedronaves
+  password:
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: jedisapp_production
+  pool: 5
+  username: pedronaves
+  password:
