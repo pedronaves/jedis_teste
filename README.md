@@ -80,11 +80,11 @@ Ao criar ou alterar um Municipe, uma notificação via SMS é enviada.
 
 ## Ambientes
 
-[Desenvolvimento]([https://#](https://#)) - [https://#](https://#)
+[Desenvolvimento]([https://jedisapp.fly.dev/](https://jedisapp.fly.dev/)) - [https://jedisapp.fly.dev/](https://jedisapp.fly.dev/)
 
-[QA]([https://#](https://#)) - [https://#](https://#)
+[QA]([https://jedisapp.fly.dev/](https://jedisapp.fly.dev/)) - [https://jedisapp.fly.dev/](https://jedisapp.fly.dev/)
 
-[Produção]([https://#](https://#)) - [https://#](https://#)
+[Produção]([https://jedisapp.fly.dev/](https://jedisapp.fly.dev/)) - [https://jedisapp.fly.dev/](https://jedisapp.fly.dev/)
 
 obs: em um cenário ideal, cada ambiente seria diferente, por motivos de ser apenas um teste, a aplicação está em um ambiente de desenvolvimento.
 
