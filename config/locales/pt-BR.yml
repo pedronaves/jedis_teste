@@ -1,6 +1,27 @@
 ---
 pt-BR:
   activerecord:
+    models:
+      municipe: Municipe
+      address: Endereço
+    attributes:
+      municipe:
+        name: Nome
+        cpf: CPF
+        cns: CNS
+        email: Email
+        birthday: Data de Nascimento
+        phone_country: Código País
+        phone_area: DDD
+        phone_number: Telefone
+        image: Foto
+      address:
+        postal_code: CEP
+        address: Endereço
+        neighborhood: Bairro
+        city: Cidade
+        state: Estado
+        error: Erros
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
