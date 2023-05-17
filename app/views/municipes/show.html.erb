@@ -7,3 +7,11 @@
   <%= link_to "Ver Todos", municipes_path %>
 
 </div>
+
+<script>
+$(document).ready(function() {
+  $('.cpf_number').mask('000.000.000-AA');
+  $('.cns_number').mask('000 0000 0000 0000');
+  $('.phone_number').mask('00000 0000');
+});
+</script>

@@ -26,13 +26,13 @@
       <% @municipes.each do |municipe| %>
         <tr>
           <td><%= link_to municipe.name, municipe, :class => 'btn btn-link btn-sm' %></td>
-          <td><%= municipe.cpf %></td>
-          <td><%= municipe.cns %></td>
+          <td><span class="cpf_number"><%= municipe.cpf %></span></td>
+          <td><span class="cns_number"><%= municipe.cns %></span></td>
           <td><%= municipe.email %></td>
           <td><%= municipe.birthday.strftime("%d/%m/%Y") %></td>
           <td>+<%= municipe.phone_country %></td>
           <td>(<%= municipe.phone_area %>)</td>
-          <td><%= municipe.phone_number %></td>
+          <td><span class="phone_number"><%= municipe.phone_number %></span></td>
           <td><%= municipe.status ? "Ativo" : "Inativo" %></td>
           <td><%= image_tag municipe.image_url(:thumb), :class => "image" if municipe.image %></td>
           <td>
@@ -51,3 +51,11 @@
     </tbody>
   </table>
 </div>
+
+<script>
+$(document).ready(function() {
+  $('.cpf_number').mask('000.000.000-AA');
+  $('.cns_number').mask('000 0000 0000 0000');
+  $('.phone_number').mask('00000 0000');
+});
+</script>
