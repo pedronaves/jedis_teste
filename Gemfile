@@ -58,6 +58,7 @@ gem 'image_processing'
 gem 'mini_magick'
 gem 'cpf_cnpj'
 gem 'validators'
+gem 'root_domain'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

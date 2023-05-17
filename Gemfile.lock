@@ -101,6 +101,7 @@ GEM
       rails
     down (5.4.0)
       addressable (~> 2.8)
+    email_data (1684024035.0.0)
     erubi (1.12.0)
     execjs (2.8.1)
     factory_bot (6.2.1)
@@ -217,6 +218,9 @@ GEM
     reline (0.3.3)
       io-console (~> 0.5)
     rexml (3.2.5)
+    root_domain (0.1.2)
+      email_data
+      simpleidn
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -269,6 +273,8 @@ GEM
     shrine (3.4.0)
       content_disposition (~> 1.0)
       down (~> 5.1)
+    simpleidn (0.2.1)
+      unf (~> 0.1.4)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -287,6 +293,9 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
     unicode-display_width (2.4.2)
     validators (3.4.2)
     web-console (4.2.0)
@@ -330,6 +339,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   redis (~> 4.0)
+  root_domain
   rspec-rails
   rubocop-rails (= 2.17.4)
   selenium-webdriver
