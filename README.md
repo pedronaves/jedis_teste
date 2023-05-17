@@ -72,7 +72,8 @@ Ao criar ou alterar um Municipe, uma notificação via e-mail é enviada.
 
 Acesse o link abaixo para visualizar e-mails enviados.
 
-[http://localhost:3000/letter_opener](http://localhost:3000/letter_opener)
+[Ambiente Local](http://localhost:3000/inbox)
+[Ambiente Produção](https://jedisapp.fly.dev/inbox)
 
 #### SMS
 
@@ -94,7 +95,6 @@ Gems Utilizadas:
 
 - RSpec
 - Rubocop
-- Fakker
 - FactoryBot
 - Simplecov
 

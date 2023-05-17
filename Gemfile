@@ -52,6 +52,7 @@ gem "bootsnap", require: false
 
 gem 'bootstrap', '~> 5.3.0.alpha3'
 gem 'jquery-rails'
+gem 'letter_opener_web', '~> 2.0'
 gem 'shrine', '~> 3.3'
 gem 'image_processing'
 gem "mini_magick"
@@ -68,7 +69,6 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem 'letter_opener_web', '~> 2.0'
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
