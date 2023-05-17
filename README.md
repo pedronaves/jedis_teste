@@ -22,7 +22,7 @@ Tempo é fundamental para nós, porém, vamos focar na qualidade do seu trabalho
 
   **1.2** - Todos os dados do munícipe são obrigatórios;
 
-  **1.3** - `CPF, CNS,Email` devem ser válidos;
+  **1.3** - `CPF, CNS, Email` devem ser válidos;
 
   **1.4** - Tenha atenção a data de nascimento. Valide os casos impossíveis/improváveis de serem válidos;
 
@@ -73,6 +73,7 @@ Ao criar ou alterar um Municipe, uma notificação via e-mail é enviada.
 Acesse o link abaixo para visualizar e-mails enviados.
 
 [Ambiente Local](http://localhost:3000/inbox)
+
 [Ambiente Produção](https://jedisapp.fly.dev/inbox)
 
 #### SMS
@@ -96,7 +97,6 @@ Gems Utilizadas:
 - RSpec
 - Rubocop
 - FactoryBot
-- Simplecov
 
 ### Executando Testes
 
@@ -107,22 +107,6 @@ Gems Utilizadas:
 ou
 
 `$ docker-compose run web bundle exec rspec`
-
-#### Testando Controller
-
-- `$`
-
-#### Testando Model
-
-- `$`
-
-#### Testando API
-
-- `$`
-
-#### Relatório de Cobertura de Testes (Simplecov)
-
-- `$`
 
 #### Testes do Rubocop
 
