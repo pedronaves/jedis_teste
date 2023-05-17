@@ -48,21 +48,21 @@ Tempo é fundamental para nós, porém, vamos focar na qualidade do seu trabalho
 
 Ao acessar a raiz da pasta, seguir os passos:
 
-`$ cd development/`
+`$ docker-compose build`
 
 `$ docker-compose run web bundle install`
 
-`$ docker-compose run web rails db:setup`
+`$ docker-compose run web rails db:create`
 
 `$ docker-compose run web rails db:migrate`
+
+`$ docker-compose up`
+
+[Acessar App]([https://localhost:3000](https://localhost:3000)) - [https://localhost:3000](https://localhost:3000)
 
 ### Compilando Assets
 
 `$ docker-compose run web rails assets:precompile`
-
-### Rodando Aplicação
-
-`$ docker-compose up --build`
 
 ## Notificações
 
@@ -100,8 +100,6 @@ Gems Utilizadas:
 
 ### Executando Testes
 
-Certifique-se de estar na pasta `development/`, e então execute os testes via console.
-
 #### Suíte completa
 
 `$ docker-compose run web rspec`
@@ -133,14 +131,3 @@ ou
 #### Correção Automática via Rubocop
 
 - `$ docker-compose run web rubocop -A`
-
-## Deploy
-
-## TO-DO
-
-- [ ] Testes
-- [ ] Criação de ambiente de prod/dev
-- [ ] CI/CD
-- [ ] Melhorias de Validações
-- [ ] Melhorias de Usabilidade
-- [ ] Notificação via SMS

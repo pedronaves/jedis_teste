@@ -49,5 +49,5 @@ processes = []
     timeout = "2s"
 
 [[statics]]
-  guest_path = "/rails/public"
+  guest_path = "/rails-app/public"
   url_prefix = "/"
