@@ -8,5 +8,4 @@ Rails.application.routes.draw do
 
   root 'municipes#index'
   mount LetterOpenerWeb::Engine, at: '/inbox'
-
 end

@@ -33,7 +33,7 @@
           <td>+<%= municipe.phone_country %></td>
           <td>(<%= municipe.phone_area %>)</td>
           <td><%= municipe.phone_number %></td>
-          <td><%= get_status(municipe.status) %></td>
+          <td><%= municipe.status ? "Ativo" : "Inativo" %></td>
           <td><%= image_tag municipe.image_url(:thumb), :class => "image" if municipe.image %></td>
           <td>
           <% if !municipe.address.ids.empty? %>

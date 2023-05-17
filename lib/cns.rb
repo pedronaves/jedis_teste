@@ -4,28 +4,28 @@ module Cns
   def self.begin_number12(cns)
     pis = cns[0, 11]
     cns_to_array = pis.split('').map(&:to_i)
-    soma = cns_to_array.each_with_index.reduce(0) do |sum, (element, index)|
+    cns_sum = cns_to_array.each_with_index.reduce(0) do |sum, (element, index)|
       sum += element * (15 - index)
       sum
     end
 
-    resto = soma % 11
-    dv = resto.zero? ? 0 : 11 - resto
-    resultado = dv == 10 ? "#{pis}001#{11 - ((soma + 2) % 11)}" : "#{pis}000#{dv}"
-    return false unless resultado == cns
+    cns_rest_of_sum = cns_sum % 11
+    dv = cns_rest_of_sum.zero? ? 0 : 11 - cns_rest_of_sum
+    cns_result = dv == 10 ? "#{pis}001#{11 - ((cns_sum + 2) % 11)}" : "#{pis}000#{dv}"
+    return false unless cns_result == cns
 
     true
   end
 
   def self.begin_number789(cns)
     cns_to_array = cns.split('').map(&:to_i)
-    soma = cns_to_array.each_with_index.reduce(0) do |sum, (element, index)|
+    cns_sum = cns_to_array.each_with_index.reduce(0) do |sum, (element, index)|
       sum += element * (15 - index)
       sum
     end
 
-    resto = soma % 11
-    return false unless resto.zero?
+    cns_rest_of_sum = cns_sum % 11
+    return false unless cns_rest_of_sum.zero?
 
     true
   end
