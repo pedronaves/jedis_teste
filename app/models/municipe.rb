@@ -27,16 +27,20 @@ class Municipe < ApplicationRecord
 
   def send_sms
     account_sid = 'ACf1d64e97b71429004e32736adca67d66'
-    auth_token = '49a14552468ad1079cc4dca66918a9cd'
+    auth_token = '61d27f26234182919f6121a1dddedf5c'
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
+    # phone_complete = '+' + phone_country.to_s + phone_area.to_s + phone_number.to_s
+    # contas trial só podem enviar sms para números previamente cadastrados
+
+    phone_complete = '+5562996334685'
     from = '+12524604039'
-    to = '+5562996334685' # por questões de segurança e por ser uma conta de teste, apenas números que estejam salvos serào notificados. é necessário criar uma conta para produção e então implementar o envio para qualquer número.
+    to = phone_complete
 
     client.messages.create(
-    from: from,
-    to: to,
-    body: "Conta salva!"
+      from: from,
+      to: to,
+      body: "Conta salva!"
     )
   end
 end
