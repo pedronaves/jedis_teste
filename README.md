@@ -119,3 +119,9 @@ ou
 #### Correção Automática via Rubocop
 
 - `$ docker-compose run web rubocop -A`
+
+#### Suporte
+
+[Gerador CPF válido]([https://geradornv.com.br/gerador-cpf/](https://geradornv.com.br/gerador-cpf/))
+
+[Gerador CNS válido]([https://geradornv.com.br/gerador-cns/](https://geradornv.com.br/gerador-cns/))
