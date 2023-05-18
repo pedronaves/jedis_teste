@@ -78,7 +78,11 @@ Acesse o link abaixo para visualizar e-mails enviados.
 
 #### SMS
 
+Utilizando os serviços do Twilio para envio de SMS.
+
 Ao criar ou alterar um Municipe, uma notificação via SMS é enviada.
+
+Por estar usando uma conta apenas para testes, é necessário o cadastro do telefone que receberá a mensagem. No caso o meu foi cadastrado.
 
 ## Ambientes
 
