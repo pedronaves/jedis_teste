@@ -12,55 +12,55 @@
   <% end %>
 
   <div>
-    <%= form.label :name, 'Nome Completo', style: "display: block" %>
-    <%= form.text_field :name, class: "form-control" %>
+    <%= form.label :name, 'Nome Completo *', style: "display: block" %>
+    <%= form.text_field :name, class: "form-control", :required => true %>
   </div>
 
   <div>
-    <%= form.label :cpf, 'CPF', style: "display: block" %>
-    <%= form.text_field :cpf, class: "form-control", minlength:8, maxlength:20, onkeypress:"$(this).mask('000.000.000-AA')" %>
+    <%= form.label :cpf, 'CPF *', style: "display: block" %>
+    <%= form.text_field :cpf, class: "form-control", minlength:8, maxlength:20, onkeypress:"$(this).mask('000.000.000-AA')", :required => true %>
   </div>
 
   <div>
-    <%= form.label :cns, 'Número CNS', style: "display: block" %>
-    <%= form.text_field :cns, class: "form-control", onkeypress:"$(this).mask('000 0000 0000 0000')" %>
+    <%= form.label :cns, 'Número CNS *', style: "display: block" %>
+    <%= form.text_field :cns, class: "form-control", onkeypress:"$(this).mask('000 0000 0000 0000')", :required => true%>
   </div>
 
   <div>
-    <%= form.label :email, 'E-mail', style: "display: block" %>
-    <%= form.text_field :email , class: "form-control" %>
+    <%= form.label :email, 'E-mail *', style: "display: block" %>
+    <%= form.text_field :email , class: "form-control", :required => true %>
   </div>
 
   <div>
-    <%= form.label :birthday, 'Data de Nascimento', style: "display: block" %>
-    <%= form.date_field :birthday, class: "form-control", min: "1950-01-01", max: Time.now %>
+    <%= form.label :birthday, 'Data de Nascimento *', style: "display: block" %>
+    <%= form.date_field :birthday, class: "form-control", min: "1950-01-01", max: Time.now, :required => true %>
   </div>
 
   <div>
-    <%= form.label :phone_country, 'Código País', style: "display: block" %>
-    <%= form.text_field :phone_country,  class: "form-control", minlength:2, maxlength:4, onkeypress:"$(this).mask('+00')" %>
+    <%= form.label :phone_country, 'Código País *', style: "display: block" %>
+    <%= form.text_field :phone_country,  class: "form-control", minlength:2, maxlength:4, onkeypress:"$(this).mask('+00')", :required => true %>
   </div>
 
   <div>
-    <%= form.label :phone_area, 'DDD', style: "display: block" %>
-    <%= form.text_field :phone_area, class: "form-control", minlength:2, maxlength:4, onkeypress:"$(this).mask('(00)')" %>
+    <%= form.label :phone_area, 'DDD *', style: "display: block" %>
+    <%= form.text_field :phone_area, class: "form-control", minlength:2, maxlength:4, onkeypress:"$(this).mask('(00)')", :required => true %>
   </div>
 
   <div>
-    <%= form.label :phone_number, 'Número de Telefone', style: "display: block" %>
-    <%= form.text_field :phone_number, class: "form-control", minlength:6, maxlength:13, onkeypress:"$(this).mask('00000 0000')" %>
+    <%= form.label :phone_number, 'Número de Telefone *', style: "display: block" %>
+    <%= form.text_field :phone_number, class: "form-control", minlength:6, maxlength:13, onkeypress:"$(this).mask('00000 0000')", :required => true %>
   </div>
 
   <div>
-    <%= form.label :image, 'Foto', style: "display: block" %>
+    <%= form.label :image, 'Foto *', style: "display: block" %>
     <%= image_tag form.object.image_url(:thumb) if @municipe.image_data %>
-    <br/><br/>
+    <br/>
     <%= form.hidden_field :image, value: @municipe.image_data %>
     <%= form.file_field :image %>
   </div>
 <br/>
   <div>
-    <%= form.label :status, 'Status' %>
+    <%= form.label :status, 'Status *' %>
     <br/>
     <%= form.label :status, "Ativo", value: "true" %>
     <%= form.radio_button :status, true, checked: true %>
@@ -69,8 +69,12 @@
     <%= form.radio_button :status, false %>
   </div>
 
+  <div class="alert alert-warning mt-5">
+    Todos campos são obrigatórios
+  </div>
+
   <div>
-    <%= form.submit 'Salvar', :class => 'btn btn-primary' %>
+    <%= form.submit 'Salvar', :class => 'btn btn-primary mt-5' %>
   </div>
 <% end %>
 

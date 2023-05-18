@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :postal_code, 'CEP', style: "display: block" %>
-    <%= form.text_field :postal_code, class: "form-control", onkeypress:"$(this).mask('00000-000')" %>
+    <%= form.label :postal_code, 'CEP *', style: "display: block" %>
+    <%= form.text_field :postal_code, class: "form-control", onkeypress:"$(this).mask('00000-000')", :required => true %>
   </div>
 
   <div>
-    <%= form.label :address, 'Endereço', style: "display: block" %>
-    <%= form.text_field :address, class: "form-control" %>
+    <%= form.label :address, 'Endereço *', style: "display: block" %>
+    <%= form.text_field :address, class: "form-control", :required => true %>
   </div>
 
   <div>
@@ -27,23 +27,27 @@
   </div>
 
   <div>
-    <%= form.label :neighborhood, 'Bairro', style: "display: block" %>
-    <%= form.text_field :neighborhood, class: "form-control" %>
+    <%= form.label :neighborhood, 'Bairro *', style: "display: block" %>
+    <%= form.text_field :neighborhood, class: "form-control", :required => true %>
   </div>
 
   <div>
-    <%= form.label :city, 'Cidade', style: "display: block" %>
-    <%= form.text_field :city, class: "form-control" %>
+    <%= form.label :city, 'Cidade *', style: "display: block" %>
+    <%= form.text_field :city, class: "form-control", :required => true %>
   </div>
 
   <div>
-    <%= form.label :state, 'Estado', style: "display: block" %>
-    <%= form.text_field :state, class: "form-control" %>
+    <%= form.label :state, 'Estado *', style: "display: block" %>
+    <%= form.text_field :state, class: "form-control", :required => true %>
   </div>
 
   <div>
     <%= form.label :ibge_code, 'Código IBGE', style: "display: block" %>
     <%= form.text_field :ibge_code, class: "form-control" %>
+  </div>
+
+  <div class="alert alert-warning mt-5">
+    Todos campos com '*' são obrigatórios
   </div>
 
   <div>
