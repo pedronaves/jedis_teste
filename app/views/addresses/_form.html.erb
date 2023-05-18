@@ -1,4 +1,4 @@
-<%= form_with(model: [@municipe, address], local: true) do |form| %>
+<%= form_with(model: [@municipe, address], :class => "row g-3", local: true) do |form| %>
   <% if address.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(address.errors.count, "error") %> impediram endereço de ser salvo:</h2>
@@ -11,47 +11,47 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :postal_code, 'CEP *', style: "display: block" %>
+  <div class="col-md-4">
+    <%= form.label :postal_code, 'CEP *', { class: "form-label"} %>
     <%= form.text_field :postal_code, class: "form-control", onkeypress:"$(this).mask('00000-000')", :required => true %>
   </div>
 
-  <div>
-    <%= form.label :address, 'Endereço *', style: "display: block" %>
+  <div class="col-md-8">
+    <%= form.label :address, 'Endereço *', { class: "form-label"} %>
     <%= form.text_field :address, class: "form-control", :required => true %>
   </div>
 
-  <div>
-    <%= form.label :address_complement, 'Complemento', style: "display: block" %>
+  <div class="col-md-6">
+    <%= form.label :address_complement, 'Complemento', { class: "form-label"} %>
     <%= form.text_field :address_complement, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :neighborhood, 'Bairro *', style: "display: block" %>
+  <div class="col-md-6">
+    <%= form.label :neighborhood, 'Bairro *', { class: "form-label"} %>
     <%= form.text_field :neighborhood, class: "form-control", :required => true %>
   </div>
 
-  <div>
-    <%= form.label :city, 'Cidade *', style: "display: block" %>
+  <div class="col-md-4">
+    <%= form.label :city, 'Cidade *', { class: "form-label"} %>
     <%= form.text_field :city, class: "form-control", :required => true %>
   </div>
 
-  <div>
-    <%= form.label :state, 'Estado *', style: "display: block" %>
+  <div class="col-md-4">
+    <%= form.label :state, 'Estado *', { class: "form-label"} %>
     <%= form.text_field :state, class: "form-control", :required => true %>
   </div>
 
-  <div>
-    <%= form.label :ibge_code, 'Código IBGE', style: "display: block" %>
+  <div class="col-md-4">
+    <%= form.label :ibge_code, 'Código IBGE', { class: "form-label"} %>
     <%= form.text_field :ibge_code, class: "form-control" %>
   </div>
 
-  <div class="alert alert-warning mt-5">
+  <div class="alert alert-warning mt-4">
     Todos campos com '*' são obrigatórios
   </div>
 
-  <div>
-    <%= form.submit 'Salvar', :class => 'btn btn-primary mt-5' %>
+  <div class="d-grid gap-2">
+    <%= form.submit 'Salvar', :class => 'btn btn-primary' %>
   </div>
 <% end %>
 
