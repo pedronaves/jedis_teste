@@ -57,9 +57,9 @@
 
 <script>
 $(document).ready(function() {
+  $('#address_postal_code').focus();
   $("#address_postal_code").blur(function(){
     var cep = this.value.replace(/[^0-9]/, "");
-
     if(cep.length != 8){
       return false;
     }
